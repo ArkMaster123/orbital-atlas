@@ -1,0 +1,69 @@
+:root{
+  --bg-primary:#0a0a0a; 
+  --bg-secondary:#1a1a1a; 
+  --bg-tertiary:#2a2a2a;
+
+  --accent-blue:#00d4ff; 
+  --accent-purple:#8b5cf6; 
+  --accent-green:#10b981; 
+  --accent-red:#ef4444; 
+  --accent-yellow:#f59e0b;
+
+  --choropleth-low:#1e293b; 
+  --choropleth-mid:#3b82f6; 
+  --choropleth-high:#06b6d4; 
+  --choropleth-extreme:#10b981;
+
+  --text-primary:#ffffff; 
+  --text-secondary:#94a3b8; 
+  --text-muted:#64748b;
+}
+
+.country-path{ 
+  fill:var(--choropleth-low); 
+  stroke:#334155; 
+  stroke-width:.5px; 
+  transition:all .3s ease;
+}
+
+.country-path:hover{ 
+  stroke:var(--accent-blue); 
+  stroke-width:2px; 
+  filter:drop-shadow(0 0 8px var(--accent-blue));
+}
+
+.data-panel{
+  background:linear-gradient(135deg,rgba(26,26,26,.9) 0%,rgba(42,42,42,.8) 100%);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+}
+
+.dataset-button{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(0,212,255,.3);
+  transition:all .3s ease;
+}
+
+.dataset-button:hover{
+  background:rgba(0,212,255,.1);
+  box-shadow:0 0 20px rgba(0,212,255,.3);
+}
+
+/* Country data bucket styles */
+.country-data-1{
+  fill:var(--choropleth-low);
+}
+
+.country-data-2{
+  fill:var(--choropleth-mid);
+}
+
+.country-data-3{
+  fill:var(--choropleth-high);
+}
+
+.country-data-4{
+  fill:var(--choropleth-extreme);
+}
+
