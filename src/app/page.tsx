@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
 import Globe from "@/components/globe";
 import DataPanel from "@/components/data-panel";
 import { DATASETS, DEFAULT_YEAR } from "@/data/mock-data";
@@ -76,7 +77,42 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen w-full px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-[18rem_1fr_20rem] gap-6">
+    <div className="min-h-screen w-full">
+      {/* Header */}
+      <header className="px-4 sm:px-6 py-4 border-b border-white/10">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold">
+            <span className="text-[color:var(--text-primary)]">Orbital</span>
+            <span className="text-[color:var(--accent-blue)]">Atlas</span>
+          </h1>
+          <nav className="flex items-center gap-4">
+            <Link 
+              href="/about" 
+              className="text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
+            >
+              About
+            </Link>
+            <a 
+              href="https://github.com/ArkMaster123/orbital-atlas" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[color:var(--text-secondary)] hover:text-[color:var(--text-primary)] transition-colors"
+            >
+              GitHub
+            </a>
+            <a 
+              href="https://www.bornandbrand.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-[color:var(--accent-blue)] text-white px-3 py-1.5 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+            >
+              Born & Brand
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="px-4 sm:px-6 py-6 grid grid-cols-1 lg:grid-cols-[18rem_1fr_20rem] gap-6">
       <DataPanel
         datasets={DATASETS}
         activeId={datasetId}
@@ -110,6 +146,7 @@ export default function Home() {
           </div>
         )}
       </aside>
-    </main>
+      </main>
+    </div>
   );
 }
